@@ -13,3 +13,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
