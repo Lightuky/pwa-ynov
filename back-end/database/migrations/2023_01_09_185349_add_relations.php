@@ -11,9 +11,23 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
-        //
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->foreignId('creator_id')
+                ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('taskslist_id')
+                ->nullable()
+                ->constrained('tasks_lists')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');;
+        });
+
+        Schema::table('tasks_lists', function (Blueprint $table) {
+            $table->foreignId('creator_id')->constrained('users');
+        });
     }
 
     /**
@@ -21,7 +35,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         //
     }

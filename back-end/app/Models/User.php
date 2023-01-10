@@ -10,7 +10,7 @@ class User extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'last_name', 'api_token'];
+    protected $fillable = ['first_name', 'last_name', 'password' ,'api_token'];
 
     /**
      * @return HasMany

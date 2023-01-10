@@ -34,8 +34,11 @@ Route::middleware('api_token')->put('tasks/{task}', 'App\Http\Controllers\TaskCo
 Route::middleware('api_token')->delete('tasks/{task}', 'App\Http\Controllers\TaskController@delete');
 
 // Users
-Route::middleware('api_token')->get('users', 'App\Http\Controllers\UsersController@index');
-Route::middleware('api_token')->get('users/{user}', 'App\Http\Controllers\UsersController@show');
-Route::middleware('api_token')->post('users', 'App\Http\Controllers\UsersController@store');
-Route::middleware('api_token')->put('users/{user}', 'App\Http\Controllers\UsersController@update');
-Route::middleware('api_token')->delete('users/{user}', 'App\Http\Controllers\UsersController@delete');
+Route::middleware('api_token')->get('users', 'App\Http\Controllers\UserController@index');
+Route::middleware('api_token')->get('users/{user}', 'App\Http\Controllers\UserController@show');
+Route::middleware('api_token')->put('users/{user}', 'App\Http\Controllers\UserController@update');
+Route::middleware('api_token')->delete('users/{user}', 'App\Http\Controllers\UserController@delete');
+
+// Auth
+Route::post('register', 'App\Http\Controllers\UserController@store');
+Route::post('login', 'App\Http\Controllers\UserController@login');
