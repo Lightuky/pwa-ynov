@@ -161,8 +161,6 @@
               <template v-else>
                 <template v-for="(task, index) in tasksList.tasks" :key="task.id">
                   <q-card-section class="ps-4 py-2" v-if="index <= 1">
-                    <!-- TODO: Afficher les 1 ou 2 tâches par liste, gérer les checkbox de statut (appel à method genre => updateStatus(task.id)) -->
-                    <!--  et inverser le status dans array avant de faire un put axios sur /api/task/:id/ -->
                     <div class="d-flex align-items-center text-capitalize">
                       <q-icon @click="updateTaskStatus(task)" class="taskStatusBox" :name="task.status === 0 ? 'check_box_outline_blank' : 'check_box'"
                               color="" size="lg" :title="task.status === 0 ? 'Marquer comme complétée' : 'Marquer comme à faire'"></q-icon>
