@@ -18,12 +18,11 @@ class CheckApiToken
     public function handle(Request $request, Closure $next): mixed
     {
         $apiToken = $request->header('api_key');
-        $hashedToken = hash('sha256', $apiToken);
 
         if ($apiToken == null) {
             return response()->json(['error' => "Aucun Token d'API n'a été fourni."]);
         } else {
-            $api_client = DB::table('users')->where('api_token', $hashedToken)->first();
+            $api_client = DB::table('users')->where('api_token', $apiToken)->first();
 
             if ($api_client == null) {
                 return response()->json(['error' => "Ce Token d'API n'est pas valide."]);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -10,9 +11,22 @@ use App\Models\TasksList;
 
 class TasksListController extends Controller
 {
-    public function index(): Collection
+    public function index(Request $request): JsonResponse
     {
-        return TasksList::all();
+        $api_token = $request->header('api-key');
+        $found_user = DB::table('users')
+            ->where('api_token', $api_token)
+            ->get();
+        $user_taskslists = DB::table('tasks_lists')
+            ->where('creator_id', $found_user[0]->id)
+            ->get();
+        foreach ($user_taskslists as $user_taskslist) {
+            $user_taskslist->tasks = DB::table('tasks')
+                ->where('creator_id', $found_user[0]->id)
+                ->where('taskslist_id', $user_taskslist->id)
+                ->get();
+        }
+        return response()->json($user_taskslists, 201);
     }
 
     public function show(TasksList $tasksList): TasksList
