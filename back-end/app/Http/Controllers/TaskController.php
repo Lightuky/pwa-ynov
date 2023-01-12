@@ -15,14 +15,37 @@ class TaskController extends Controller
         return Task::all();
     }
 
-    public function show(Task $task): Task
+    public function show(Request $request): JsonResponse
     {
-        return $task;
+        $task_id = $request->route('task');
+        $api_token = $request->header('api-key');
+        $found_user = DB::table('users')
+            ->where('api_token', $api_token)
+            ->get();
+        $task = DB::table('tasks')
+            ->where('creator_id', $found_user[0]->id)
+            ->where('id', $task_id)
+            ->get()->first();
+        return response()->json($task ?: "null", 201);
     }
 
     public function store(Request $request): JsonResponse
     {
-        $task = Task::create($request->all());
+        $api_token = $request->header('api-key');
+        $found_user = DB::table('users')
+            ->where('api_token', $api_token)
+            ->get();
+        DB::table('tasks')->insert([
+            'name' => $request->name,
+            'description' => $request->description,
+            'status' => 0,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'creator_id' => $found_user[0]->id,
+            'taskslist_id' => $request->taskslist_id,
+
+        ]);
+        $task = Task::latest('id')->first();
 
         return response()->json($task, 201);
     }

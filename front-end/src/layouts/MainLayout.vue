@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <HeaderComponent/>
     <q-page-container style="height: calc(100vh - 60px)">
-      <router-view/>
+      <router-view :key="$route.fullPath"/>
     </q-page-container>
   </q-layout>
 </template>

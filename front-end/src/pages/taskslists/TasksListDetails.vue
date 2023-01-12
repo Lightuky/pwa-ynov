@@ -285,7 +285,7 @@ export default defineComponent({
     },
     updateTaskStatus: function (task) {
       task.status = task.status === 1 ? 0 : 1
-      axios.put('http://127.0.0.1:8000/api/tasks/' + task.id, task, { headers: { 'api-key': this.session.api_token } })
+      axios.post('http://127.0.0.1:8000/api/tasks/' + task.id, task, { headers: { 'api-key': this.session.api_token } })
       this.getUserTasksLists()
     }
   },

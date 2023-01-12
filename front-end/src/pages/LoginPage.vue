@@ -34,7 +34,6 @@
     }
   }
 }
-
 </style>
 
 <template>
@@ -43,6 +42,7 @@
     <q-card class="col-4 formBlock px-3 py-4">
       <q-card-section>
         <q-form class="q-gutter-md" @submit="onSubmit" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false">
+          <div class="inputLabel ms-2 mt-0">Email</div>
           <q-input outlined v-model="form.email" label="Ex: tom.dupont@gmail.com" class="q-mt-sm q-mb-md q-gutter-none ms-2 pb-1"
                    type="email"
                    :rules="[val => val && val.length > 0 || 'Veuillez rentrer un email', val => validateEmail(val) || 'Email invalide']" lazy-rules/>

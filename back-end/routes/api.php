@@ -23,14 +23,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('api_token')->get('taskslists', 'App\Http\Controllers\TasksListController@index');
 Route::middleware('api_token')->get('taskslists/{taskslist}', 'App\Http\Controllers\TasksListController@show');
 Route::middleware('api_token')->post('taskslists', 'App\Http\Controllers\TasksListController@store');
-Route::middleware('api_token')->put('taskslists/{taskslist}', 'App\Http\Controllers\TasksListController@update');
+Route::middleware('api_token')->post('taskslists/{taskslist}', 'App\Http\Controllers\TasksListController@update');
 Route::middleware('api_token')->delete('taskslists/{taskslist}', 'App\Http\Controllers\TasksListController@delete');
 
 // Tasks
 Route::middleware('api_token')->get('tasks', 'App\Http\Controllers\TaskController@index');
 Route::middleware('api_token')->get('tasks/{task}', 'App\Http\Controllers\TaskController@show');
 Route::middleware('api_token')->post('tasks', 'App\Http\Controllers\TaskController@store');
-Route::middleware('api_token')->put('tasks/{task}', 'App\Http\Controllers\TaskController@update');
+Route::middleware('api_token')->post('tasks/{task}', 'App\Http\Controllers\TaskController@update');
 Route::middleware('api_token')->delete('tasks/{task}', 'App\Http\Controllers\TaskController@delete');
 
 // Users
