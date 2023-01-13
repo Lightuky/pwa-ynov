@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e45341c0-b3cc-4ecd-86ab-ebda27077b2b" name="Changes" comment="" />
+    <list default="true" id="e45341c0-b3cc-4ecd-86ab-ebda27077b2b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/book-finder-app/src/components/HeaderComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/components/EssentialLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/src/css/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/css/quasar.variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/src/css/quasar.variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/index.template.html" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/src/index.template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/src/layouts/MainLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/pages/IndexPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/src/pages/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-finder-app/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/book-finder-app/src/router/routes.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,6 +148,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2K5uYeTU4ZqvwAYH8CY9ejGcu1F" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -187,7 +202,7 @@
       <workItem from="1673367747512" duration="5745000" />
       <workItem from="1673423788353" duration="6011000" />
       <workItem from="1673525673263" duration="14779000" />
-      <workItem from="1673593892503" duration="2089000" />
+      <workItem from="1673593892503" duration="17159000" />
     </task>
     <servers />
   </component>
